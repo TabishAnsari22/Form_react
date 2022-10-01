@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from 'react'
 
-const RegistrationForm = () => {
+const Abc = () => {
   const [names, setName] = useState("");
   const [lastName, setlastName] = useState("");
   const [email, setEmail] = useState("");
@@ -11,26 +11,29 @@ const RegistrationForm = () => {
 
   const clickHandler = (e) => {
     e.preventDefault();
-
-  
-      if (!names) {
-        seterror("Plz enter the Name");
-      }
-      if (!lastName) {
-        seterrLastNAme("Plz enter the LastName");
-      }
-      if (!email) {
-        seterrEmail("Plz enter the Email");
-      }
-      if (names && lastName && email) {
-        setDone("Successfully");
-        setName("");
-        setlastName("");
-        setEmail("");
-      }
-  
-
     
+
+if (!names&&!lastName&&!email) {
+  seterror("Plz enter the Name");
+  seterrLastNAme("Plz enter the LastName");
+  seterrEmail("Plz enter the Email");
+}else{
+  if(!names) {
+     seterror("Plz enter the Name");
+  } else if (!lastName) {
+     seterrLastNAme("Plz enter the LastName");
+  } else if (!email) {
+     seterrEmail("Plz enter the Email");
+  } else {
+    setDone("Successfully");
+  }
+
+}
+
+     
+    setName("");
+    setlastName("");
+    setEmail("");
   };
 
   return (
@@ -87,6 +90,6 @@ const RegistrationForm = () => {
       </form>
     </div>
   );
-};
+}
 
-export default RegistrationForm;
+export default Abc
